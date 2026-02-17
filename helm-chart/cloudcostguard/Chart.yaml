@@ -1,0 +1,19 @@
+apiVersion: v2
+name: cloudcostguard
+description: A Helm chart for CloudCostGuard - Open-source FinOps platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - finops
+  - cost-management
+  - kubernetes
+  - azure
+  - monitoring
+home: https://github.com/your-org/cloudcostguard
+sources:
+  - https://github.com/your-org/cloudcostguard
+maintainers:
+  - name: CloudCostGuard Team
+    email: team@cloudcostguard.io
+dependencies: []

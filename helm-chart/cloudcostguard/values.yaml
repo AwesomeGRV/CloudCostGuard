@@ -1,0 +1,145 @@
+# Default values for CloudCostGuard.
+# This is a YAML-formatted file.
+
+replicaCount: 1
+
+image:
+  repository: cloudcostguard
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  fsGroup: 2000
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: cloudcostguard.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Backend Configuration
+backend:
+  replicaCount: 1
+  image:
+    repository: cloudcostguard-backend
+    tag: "latest"
+  service:
+    port: 8000
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+  env:
+    databaseUrl: "postgresql+asyncpg://user:password@postgres:5432/cloudcostguard"
+    redisUrl: "redis://redis:6379"
+    secretKey: "your-secret-key-here"
+
+# Frontend Configuration
+frontend:
+  replicaCount: 1
+  image:
+    repository: cloudcostguard-frontend
+    tag: "latest"
+  service:
+    port: 3000
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+
+# PostgreSQL Configuration
+postgresql:
+  enabled: true
+  auth:
+    postgresPassword: "password"
+    database: "cloudcostguard"
+  primary:
+    persistence:
+      enabled: true
+      size: 8Gi
+
+# Redis Configuration
+redis:
+  enabled: true
+  auth:
+    enabled: false
+  master:
+    persistence:
+      enabled: true
+      size: 4Gi
+
+# Azure Configuration
+azure:
+  subscriptionId: ""
+  clientId: ""
+  clientSecret: ""
+  tenantId: ""
+
+# Prometheus Configuration
+prometheus:
+  enabled: false
+  url: "http://prometheus:9090"
+
+# Monitoring
+monitoring:
+  serviceMonitor:
+    enabled: false
+    interval: 30s
+    scrapeTimeout: 10s

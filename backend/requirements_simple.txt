@@ -1,0 +1,14 @@
+# Simple requirements for CloudCostGuard development (compatible versions)
+
+# Core dependencies
+fastapi==0.100.1
+uvicorn[standard]==0.23.2
+pydantic==2.3.0
+pydantic-settings==2.0.3
+
+# Database (SQLite for development)
+sqlalchemy==2.0.20
+aiosqlite==0.19.0
+
+# HTTP client
+httpx==0.24.1

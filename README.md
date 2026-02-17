@@ -291,25 +291,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Issues: [GitHub Issues](https://github.com/your-org/cloudcostguard/issues)
 - Discussions: [GitHub Discussions](https://github.com/your-org/cloudcostguard/discussions)
 
-## Roadmap
-
-### v1.1
-- [ ] AWS Cost Explorer integration
-- [ ] GCP Cost Management integration
-- [ ] Multi-cluster support
-- [ ] Advanced alerting
-
-### v1.2
-- [ ] Slack/Teams integration
-- [ ] Cost anomaly detection
-- [ ] Budget management
-- [ ] Custom dashboards
-
-### v2.0
-- [ ] Terraform cost analysis
-- [ ] Reserved instance recommendations
-- [ ] Team-based access control
-- [ ] Audit logging
 
 ## Acknowledgments
 

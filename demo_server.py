@@ -168,6 +168,56 @@ class CloudCostGuardHandler(BaseHTTPRequestHandler):
                 "trend": "increasing",
                 "average_monthly_change": 7.45
             }
+        elif path == '/api/v1/azure/cost-analysis':
+            # Parse request body for Azure credentials
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 0:
+                post_data = self.rfile.read(content_length)
+                try:
+                    import urllib.parse
+                    data = urllib.parse.parse_qs(post_data.decode('utf-8'))
+                    subscription_id = data.get('subscriptionId', [''])[0]
+                    resource_group = data.get('resourceGroup', [''])[0]
+                    
+                    # Generate mock cost data based on inputs
+                    import random
+                    total_cost = random.uniform(1000, 6000)
+                    
+                    response = {
+                        "subscriptionId": subscription_id,
+                        "resourceGroup": resource_group,
+                        "totalCost": total_cost,
+                        "currency": "USD",
+                        "period": "current_month",
+                        "breakdown": {
+                            "compute": random.uniform(500, 2500),
+                            "storage": random.uniform(200, 1200),
+                            "networking": random.uniform(100, 600),
+                            "other": random.uniform(50, 350)
+                        },
+                        "resources": [
+                            {
+                                "name": f"{resource_group}-vm-01",
+                                "type": "Virtual Machine",
+                                "cost": random.uniform(100, 600)
+                            },
+                            {
+                                "name": f"{resource_group}-storage-01",
+                                "type": "Storage Account",
+                                "cost": random.uniform(50, 250)
+                            },
+                            {
+                                "name": f"{resource_group}-sql-01",
+                                "type": "SQL Database",
+                                "cost": random.uniform(100, 400)
+                            }
+                        ],
+                        "lastUpdated": datetime.datetime.now().isoformat()
+                    }
+                except Exception as e:
+                    response = {"error": f"Invalid request data: {str(e)}"}
+            else:
+                response = {"error": "Missing request data"}
         else:
             response = {"error": "Endpoint not found"}
 
@@ -183,7 +233,57 @@ class CloudCostGuardHandler(BaseHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         
-        if path == '/api/v1/recommendations/generate':
+        if path == '/api/v1/azure/cost-analysis':
+            # Parse request body for Azure credentials
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 0:
+                post_data = self.rfile.read(content_length)
+                try:
+                    import urllib.parse
+                    data = urllib.parse.parse_qs(post_data.decode('utf-8'))
+                    subscription_id = data.get('subscriptionId', [''])[0]
+                    resource_group = data.get('resourceGroup', [''])[0]
+                    
+                    # Generate mock cost data based on inputs
+                    import random
+                    total_cost = random.uniform(1000, 6000)
+                    
+                    response = {
+                        "subscriptionId": subscription_id,
+                        "resourceGroup": resource_group,
+                        "totalCost": total_cost,
+                        "currency": "USD",
+                        "period": "current_month",
+                        "breakdown": {
+                            "compute": random.uniform(500, 2500),
+                            "storage": random.uniform(200, 1200),
+                            "networking": random.uniform(100, 600),
+                            "other": random.uniform(50, 350)
+                        },
+                        "resources": [
+                            {
+                                "name": f"{resource_group}-vm-01",
+                                "type": "Virtual Machine",
+                                "cost": random.uniform(100, 600)
+                            },
+                            {
+                                "name": f"{resource_group}-storage-01",
+                                "type": "Storage Account",
+                                "cost": random.uniform(50, 250)
+                            },
+                            {
+                                "name": f"{resource_group}-sql-01",
+                                "type": "SQL Database",
+                                "cost": random.uniform(100, 400)
+                            }
+                        ],
+                        "lastUpdated": datetime.datetime.now().isoformat()
+                    }
+                except Exception as e:
+                    response = {"error": f"Invalid request data: {str(e)}"}
+            else:
+                response = {"error": "Missing request data"}
+        elif path == '/api/v1/recommendations/generate':
             response = {
                 "message": "Recommendations generation started",
                 "task_id": "demo-task-123",

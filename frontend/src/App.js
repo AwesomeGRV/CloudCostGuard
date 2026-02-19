@@ -14,7 +14,7 @@ const App = () => {
   const styles = {
     app: {
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%)',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
       color: '#333'
     },
@@ -33,8 +33,8 @@ const App = () => {
       fontSize: '3.5rem',
       fontWeight: '700',
       margin: '0 0 10px 0',
-      textShadow: '0 4px 6px rgba(0,0,0,0.3)',
-      background: 'linear-gradient(45deg, #ff8c42, #ff6b35)',
+      textShadow: '0 4px 6px rgba(0,0,0,0.1)',
+      background: 'linear-gradient(45deg, #fff, #f0f0f0)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text'
@@ -82,7 +82,7 @@ const App = () => {
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: '50%',
-      background: 'linear-gradient(135deg, #ff8c42, #ff6b35)',
+      background: 'linear-gradient(135deg, #28a745, #20c997)',
       color: 'white'
     },
     statusText: {
@@ -126,12 +126,12 @@ const App = () => {
     endpointItemHover: {
       transform: 'scale(1.05)',
       boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
-      borderColor: '#ff6b35'
+      borderColor: '#007bff'
     },
     endpointTitle: {
       fontSize: '1.1rem',
       fontWeight: '600',
-      color: '#ff6b35',
+      color: '#007bff',
       margin: '0 0 10px 0',
       display: 'flex',
       alignItems: 'center'

@@ -85,7 +85,7 @@ const AzureCostForm = () => {
       fontSize: '2.5rem',
       fontWeight: '700',
       margin: '0 0 10px 0',
-      background: 'linear-gradient(135deg, #ff8c42, #ff6b35)',
+      background: 'linear-gradient(135deg, #667eea, #764ba2)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text'

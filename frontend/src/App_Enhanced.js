@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AzureCostForm from './AzureCostForm_Enhanced';
+import AzureCostForm from './AzureCostForm';
 
 const App = () => {
   const [currentTime, setCurrentTime] = useState(new Date());

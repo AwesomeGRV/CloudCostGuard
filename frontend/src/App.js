@@ -324,7 +324,7 @@ const App = () => {
         <footer style={styles.footer}>
           <p>© 2026 CloudCostGuard - Open-Source FinOps Platform</p>
           <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>
-            Built with passion using React, FastAPI, and modern web technologies
+            Built with passion by awesomeGRV using React, FastAPI, and modern web technologies
           </p>
         </footer>
       </div>

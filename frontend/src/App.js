@@ -190,11 +190,11 @@ const App = () => {
   };
 
   const endpoints = [
-    { name: 'Health Check', url: 'http://localhost:8000/health', icon: '❤️' },
-    { name: 'Cost Overview', url: 'http://localhost:8000/api/v1/costs/overview', icon: '💰' },
-    { name: 'Namespace Costs', url: 'http://localhost:8000/api/v1/costs/namespaces', icon: '📊' },
-    { name: 'Recommendations', url: 'http://localhost:8000/api/v1/recommendations/', icon: '💡' },
-    { name: 'Cost Comparisons', url: 'http://localhost:8000/api/v1/analytics/comparisons', icon: '📈' }
+    { name: 'Health Check', url: 'http://localhost:8000/health', icon: '•' },
+    { name: 'Cost Overview', url: 'http://localhost:8000/api/v1/costs/overview', icon: '•' },
+    { name: 'Namespace Costs', url: 'http://localhost:8000/api/v1/costs/namespaces', icon: '•' },
+    { name: 'Recommendations', url: 'http://localhost:8000/api/v1/recommendations/', icon: '•' },
+    { name: 'Cost Comparisons', url: 'http://localhost:8000/api/v1/analytics/comparisons', icon: '•' }
   ];
 
   const [hoveredStatus, setHoveredStatus] = useState(null);
@@ -219,7 +219,7 @@ const App = () => {
       
       <div style={styles.container}>
         <header style={styles.header}>
-          <h1 style={styles.title}>☁️ CloudCostGuard</h1>
+          <h1 style={styles.title}>CloudCostGuard</h1>
           <p style={styles.subtitle}>Enterprise FinOps Platform for Cloud Cost Management</p>
           <div style={styles.timeDisplay}>
             {currentTime.toLocaleString()}
@@ -228,14 +228,14 @@ const App = () => {
 
         <div style={styles.statusCard}>
           <h2 style={{ fontSize: '1.8rem', fontWeight: '600', marginBottom: '25px', color: '#495057' }}>
-            🚀 System Status
+            System Status
           </h2>
           <div style={styles.statusGrid}>
             {[
-              { label: 'Backend Server', value: 'Running on port 8000', icon: '🔧' },
-              { label: 'Frontend Server', value: 'Running on port 3000', icon: '⚛️' },
-              { label: 'API Health', value: 'All systems healthy', icon: '✅' },
-              { label: 'Database', value: 'Connected and ready', icon: '🗄️' }
+              { label: 'Backend Server', value: 'Running on port 8000', icon: '•' },
+              { label: 'Frontend Server', value: 'Running on port 3000', icon: '•' },
+              { label: 'API Health', value: 'All systems healthy', icon: '•' },
+              { label: 'Database', value: 'Connected and ready', icon: '•' }
             ].map((item, index) => (
               <div
                 key={index}
@@ -260,7 +260,7 @@ const App = () => {
 
         <div style={styles.endpointsCard}>
           <h2 style={{ fontSize: '1.8rem', fontWeight: '600', marginBottom: '25px', color: '#495057' }}>
-            📊 API Endpoints
+            API Endpoints
           </h2>
           <div style={styles.endpointsGrid}>
             {endpoints.map((endpoint, index) => (
@@ -288,7 +288,7 @@ const App = () => {
           <div style={styles.infoGrid}>
             <div style={styles.infoSection}>
               <h3 style={styles.infoTitle}>
-                <span style={{ marginRight: '10px' }}>💡</span>
+                <span style={{ marginRight: '10px' }}></span>
                 Next Steps
               </h3>
               <div style={styles.infoContent}>
@@ -304,7 +304,7 @@ const App = () => {
             
             <div style={styles.infoSection}>
               <h3 style={styles.infoTitle}>
-                <span style={{ marginRight: '10px' }}>🎯</span>
+                <span style={{ marginRight: '10px' }}></span>
                 Demo Features
               </h3>
               <div style={styles.infoContent}>
@@ -324,7 +324,7 @@ const App = () => {
         <footer style={styles.footer}>
           <p>© 2026 CloudCostGuard - Open-Source FinOps Platform</p>
           <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>
-            Built with ❤️ using React, FastAPI, and modern web technologies
+            Built with passion using React, FastAPI, and modern web technologies
           </p>
         </footer>
       </div>

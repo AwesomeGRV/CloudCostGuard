@@ -331,7 +331,7 @@ const AzureCostForm = () => {
       </style>
 
       <div style={styles.header}>
-        <h2 style={styles.title}>☁️ Azure Cost Analysis</h2>
+        <h2 style={styles.title}>Azure Cost Analysis</h2>
         <p style={styles.subtitle}>Enter your Azure credentials to get detailed cost insights</p>
       </div>
 
@@ -380,7 +380,7 @@ const AzureCostForm = () => {
             ...(loading ? styles.submitButtonLoading : {})
           }}
         >
-          {loading ? '🔄 Analyzing Costs...' : '📊 Get Cost Analysis'}
+          {loading ? 'Analyzing Costs...' : 'Get Cost Analysis'}
         </button>
       </form>
 
@@ -393,7 +393,7 @@ const AzureCostForm = () => {
       {costData && (
         <div style={styles.resultsContainer}>
           <div style={styles.resultsHeader}>
-            <h3 style={styles.resultsTitle}>💰 Cost Analysis Results</h3>
+            <h3 style={styles.resultsTitle}>Cost Analysis Results</h3>
             <p>Detailed breakdown for your Azure resources</p>
           </div>
           

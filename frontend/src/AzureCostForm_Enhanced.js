@@ -79,13 +79,13 @@ const AzureCostForm = () => {
     header: {
       textAlign: 'center',
       marginBottom: '35px',
-      color: '#2563eb'
+      color: '#ff6b35'
     },
     title: {
       fontSize: '2.5rem',
       fontWeight: '700',
       margin: '0 0 10px 0',
-      background: 'linear-gradient(135deg, #667eea, #764ba2)',
+      background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text'
@@ -131,7 +131,7 @@ const AzureCostForm = () => {
     },
     inputFocused: {
       borderColor: '#2563eb',
-      boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.1)',
+      boxShadow: '0 0 0 3px rgba(255, 107, 53, 0.1)',
       transform: 'translateY(-2px)'
     },
     inputError: {
@@ -141,7 +141,7 @@ const AzureCostForm = () => {
     submitButton: {
       width: '100%',
       padding: '16px 32px',
-      background: loading ? '#9ca3af' : 'linear-gradient(135deg, #2563eb, #1d4ed8)',
+      background: loading ? '#9ca3af' : 'linear-gradient(135deg, #ff6b35, #f7931e)',
       color: 'white',
       border: 'none',
       borderRadius: '12px',
@@ -149,7 +149,7 @@ const AzureCostForm = () => {
       fontWeight: '600',
       cursor: loading ? 'not-allowed' : 'pointer',
       transition: 'all 0.3s ease',
-      boxShadow: '0 10px 25px rgba(37, 99, 235, 0.3)',
+      boxShadow: '0 10px 25px rgba(255, 107, 53, 0.3)',
       textTransform: 'uppercase',
       letterSpacing: '0.5px',
       position: 'relative',
@@ -157,7 +157,7 @@ const AzureCostForm = () => {
     },
     submitButtonHover: {
       transform: 'translateY(-3px)',
-      boxShadow: '0 15px 35px rgba(37, 99, 235, 0.4)'
+      boxShadow: '0 15px 35px rgba(255, 107, 53, 0.4)'
     },
     submitButtonLoading: {
       background: 'linear-gradient(135deg, #9ca3af, #6b7280)'
@@ -181,7 +181,7 @@ const AzureCostForm = () => {
       animation: 'fadeInUp 0.8s ease-out'
     },
     resultsHeader: {
-      color: '#16a34a',
+      color: '#ff6b35',
       marginBottom: '25px',
       textAlign: 'center'
     },
@@ -217,7 +217,7 @@ const AzureCostForm = () => {
       fontWeight: '800',
       color: '#111827',
       margin: '5px 0',
-      background: 'linear-gradient(135deg, #059669, #047857)',
+      background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text'
@@ -298,7 +298,7 @@ const AzureCostForm = () => {
     resourceCost: {
       fontSize: '1.3rem',
       fontWeight: '700',
-      color: '#059669'
+      color: '#ff6b35'
     },
     timestamp: {
       textAlign: 'center',
